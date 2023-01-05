@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>01 Components</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="node_modules/vue/dist/vue.min.js"></script>
+</head>
+<body>
+  
+<div id="app">
+    <h1>{{title}}</h1>
+    <div v-for="st in students"><p>Name:{{st.name}}</p></div>
+</div>
+
+<div id="app2">
+    <h1>{{title}}</h1>
+    <div v-for="st in courses"><p>Name:{{st.name}}</p></div>
+    <courses></courses>
+</div>
+
+<script>
+    
+    new Vue({
+        el:'#app',
+        data:{
+            title:'Students',
+            students:[
+                {name:'John', surname:'Smith'},
+                {name:'Juris', surname:'Kaposts'},
+                {name:'Samanta', surname: 'Stepe'}
+            ]
+        }
+    });
+    Vue.component('students', {
+        data: function(){
+                        return{
+                            students:[
+                                {name:'John', surname:'Smith'},
+                                {name:'Juris', surname:'Kaposts'},
+                                {name:'Samanta', surname: 'Stepe'}
+                                ]
+                            };
+                        },
+            template: '<div><div v-for="st in students"><p>{{st.name}} {{st.surname}}</p></div></div>'
+    });
+    new Vue({
+        el:'#app2',
+        data:{
+            title:'Courses',
+            courses: [
+                {name: 'JS', lector: 'Emma'},
+                {name: 'SQL', lector: 'Jasper'},
+                {name: 'PHP', lector: 'Pluton'}
+            ]
+
+        }
+    });
+    vue.component('courses', {
+        data: function() {
+            return {
+                students:[
+                    {name:'John', surname:'Smith'},
+                    {name:'Juris', surname:'Kaposts'},
+                    {name:'Samanta', surname: 'Stepe'}
+                    ]
+            };
+        },
+        template: '<div><div v-for="st in courses"><p>Name:{{st.name}} {{st.lector}}</p></div></div>'
+    });
+</script>
+</body>

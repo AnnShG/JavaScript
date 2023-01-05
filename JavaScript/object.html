@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <Title>JavaScript</Title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <script src='main.js' type='text/javascript'></script>
+    </head>
+        <p id="objects"></p>
+        <p id="objects2"></p>
+        <p id="objects3"></p>
+
+        <script>
+        const person = { // person in an OBJECT, and person as an object has some properties
+            firstName:"John", 
+            lastName:"Doe", 
+            age:50, 
+            eyeColor:"blue"
+        };
+        document.getElementById("objects").innerHTML = person.lastName;
+        document.getElementById("objects2").innerHTML = 
+        person.firstName + " is " + person.age + " years old.";
+        document.getElementById("objects3").innerHTML = 
+        person.firstName + " has beautiful " + person.eyeColor + " eyes."; 
+
+    </script>
+</body>
+</html>

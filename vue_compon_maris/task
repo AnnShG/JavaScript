@@ -1,0 +1,4 @@
+Task
+Create vue application according of instructions in presentation.
+Create new component - cars(Name, year, engine type, odometer).
+Reuse component in 2 pages.

@@ -1,0 +1,11 @@
+Create 4 cars view page.
+Cars describe – Mark, model, year, color, engineType
+When you mouse move on 1 car you retrieve all this information using public class method.
+
+When you mouse move on 2nd car you retrieve all data using extend class method(extra parameter – odometer and also if car odometer is greater than 2000 than mark car as “(used)”).
+
+When you mouse move on 3rd car all values comes from private methods
+
+When you mouse move on 4 car all values comes from static parameters.
+
+I suggest to use on each car separate class

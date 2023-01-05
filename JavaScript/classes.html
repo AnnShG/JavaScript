@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <Title>JavaScript</Title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <!-- <script src='classes.js' type='text/javascript'></script> -->
+
+        <body>
+            <p id="ford"></p>
+            <p id="audi"></p>
+            <p id="ageMethod"></p>
+            <p id="ageMethodParameter"></p>
+            <p id="methodInteritance"></p>
+            <p id="getSet"></p>
+            <p id="setGet"></p>
+            <p id="static"></p>
+            <p id="static2"></p>
+
+            <script>
+                class Car {
+                  constructor(name, year) {
+                    this.name = name;
+                    this.year = year;
+                  }
+                  age() {
+                      let date = new Date();
+                      return date.getFullYear() - this.year;
+                  }
+                  age2(x) {
+                      return x - this.year;
+                  }
+                }
+                //we used the class to create two car objects
+                const myCar1 = new Car("Ford", 2014); 
+                document.getElementById("ford").innerHTML =
+                myCar1.name + " " + myCar1.year;
+
+                const myCar2 = new Car("Audi", 2019);
+                document.getElementById("audi").innerHTML =
+                myCar2.name + " " + myCar2.year;
+
+                let myCar = new Car("Ford", 2014);
+                document.getElementById("ageMethod").innerHTML =
+                "My car is " + myCar.age() + " years old.";
+
+                let date = new Date();
+                let year = date.getFullYear();
+
+                let myCar_2 = new Car ("Ford", 2014);
+                document.getElementById("ageMethodParameter").innerHTML=
+                "My car is " + myCar_2.age2(year) + " years old.";
+
+
+
+                class Car2 {
+                    constructor(brand) {
+                        this.carname = brand;
+                    }
+                    present() {
+                        return 'I have a ' + this.carname;
+                    }
+                }
+                // class moel will inherit all Car's methods
+                class Model extends Car2 {
+                    constructor(brand, age) {
+                        super(brand); //The super() method refers to the parent class.
+                        this.model = age;
+                    }
+                    show() {
+                        return this.present() + ', it is ' + this.model;
+                    }
+                }
+
+                let myCarr = new Model("Ford", "old");
+                document.getElementById("methodInteritance").innerHTML = myCarr.show();
+
+
+                class Dog {
+                    constructor(breed) {
+                        this.dogname = breed; // breed is a property
+                    }
+                    get dname() {
+                        return this.dogname; //property
+                    }
+                    set dname(x) {
+                        this.dogname = x;
+                    }
+                }
+
+                class Dog2 {
+                    constructor(breed) {
+                    this.dog2name = breed;
+                    }
+                    set d2name(x) {
+                        this.dog2name = x;
+                    }
+                    get d2name() {
+                        return this.dog2name;
+                    }
+                }
+                let myDog = new Dog();
+                myDog.dogname = "Husky";
+                document.getElementById("getSet").innerHTML = myDog.dname;
+
+                let myDog2 = new Dog2();
+                myDog2.dog2name = "Husky Second";
+                document.getElementById("setGet").innerHTML = myDog2.d2name;
+
+                //You cannot call a static method on an object, only on an object class.
+                
+                class Word {
+                    constructor(name) {
+                    this.name = name;
+                    }
+                    static hello() {
+                        return "Hello!";
+                    }
+                }
+
+                let myWord = new Word(); // this is a word object
+
+                // You can call 'Hello' on the Word class with static method
+                document.getElementById("static").innerHTML = Word.hello();
+
+                // But NOT on  a Word Object:
+                // document.getElementById("static").innerHTML = myWord.hello();
+                // this will raise an error.
+
+
+                // To use the "myWord" object inside the static method, you can send it as parameter.
+                class Word2 {
+                    constructor(name) {
+                    this.name = name;
+                    }
+                    static hello(x) {
+                        return "Hello! " + x.name; // here we add "Dog" to static method for future output
+                    }
+                }
+
+                let myWord2 = new Word2("Dog");
+                //in this case, Hello! and Dog will be connected, the output - "Hello! Dog"
+                document.getElementById("static2").innerHTML = Word2.hello(myWord2);
+
+                // super(arguments);  // calls the parent constructor (only inside the constructor)
+                // super.parentMethod(arguments);  // calls a parent method
+                </script>   
+        </body>
+    </head>
+</html>

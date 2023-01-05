@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <Title>Test</Title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+        <script src='quiz.js' type='text/javascript'></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+
+    <body onload="fillForm()">
+<center>
+    <h1>Your data</h1>
+    <form action="javascript:checkQuiz()" method="post" id="autho">
+        <p>
+            <label>Name:</label>
+            <input type="text" name="name" id="name">
+        </p>
+        <p>
+            <label>Surname:</label>
+            <input type="text" name="surname" id="surname">
+        </p>          
+            <h1>Quiz</h1>
+            <p>
+                <label>Q1</label>
+                <input type="text" id="Q1">
+            </p>
+            <p>
+                <label>Q2</label>
+                <input type="text" id="Q2">
+            </p>
+            <p>
+                <label>Q3</label>
+                <input type="text" id="Q3">
+            </p>
+            <p>
+                <label>Q4</label>
+                <input type="text"  id="Q4">
+            </p>
+            <p>
+                <label>Q5</label>
+                <input type="text" id="Q5">
+            </p>
+            <var> <p>
+                <label>Q6</label>
+                <input type="text"  id="Q6">
+            </p>
+            <p>
+                <label>Q7</label>
+                <input type="text" id="Q7">
+            </p>
+            <p>
+                <label>Q8</label>
+                <input type="text" id="Q8">
+            </p>
+            <p>
+                <label>Q9</label>
+                <input type="text" id="Q9">
+            </p>
+            <p>  
+                <label>Q10</label>
+                <input type="text" id="Q10">
+            </p>
+            <p>
+                <label>Q11</label>
+                <input type="text" id="Q11">
+            </p>
+            <p>
+                <label>Q12</label>
+                <input type="text"  id="Q12">
+            </p>
+            <p>
+                <label>Q13</label>
+                <input type="text"  id="Q13">
+            </p>
+            <p>
+                <label>Q14</label>
+                <input type="text"  id="Q14">
+            </p>
+            <p>
+                <label>Q15</label>
+                <input type="text"  id="Q15">
+            </p>
+            <p>
+            <label>Counter</label>
+            <input type="number" name="grade" id="counter" readonly>
+            </p>
+            <!-- <p>
+                <!-- <label class="form-label">Grade</label>
+                <input type="number" name="grade" id="grade" readonly required=true> -->
+            </p> -->
+            <div id="submit"></div>
+            <input type="submit" value="Submit">
+
+        </form> 
+
+</center>
+    </body>
+</html>
